@@ -26,9 +26,9 @@ const setAboutMe = () => {
     contentBody.innerHTML = `
     <h2>About Me</h2>
     <p><b>Greetings!</b></p>
-    <p>My name is Coco, I'm an aspiring Game Developer with a passion for video games.</p>
-    <p>I view design problems as both creative challenge and a problem solver both is an opportunity to innovate</p>
-    <p>I am always taking on the challenge of learning new tools and skills. Check out some of my projects (including this webpage) by navigating using the various items!</p>
+    <p>My name is <b>Coco</b>, I'm an aspiring <b>game developer</b> with a passion for video games.</p>
+    <p>I have always loved games, and I have always engaged with my interests by <b>creating</b>. I consider myself an engineer and an artist who approaches every problem by seeking out <b>efficient</b> and <b>creative</b> solutions.</p>
+    <p>I am always taking on the challenge of learning new tools and skills. Check out some of my projects (including this webpage) by navigating with the each item slot!</p>
     `
 }
 setAboutMe();
