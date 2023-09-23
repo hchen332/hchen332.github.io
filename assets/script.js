@@ -1,18 +1,17 @@
+//font resizing
 flexFont = function () {
     var div1 = document.getElementsByClassName("profile");
     var div2 = document.getElementsByClassName("information");
     var div3 = document.getElementsByClassName("imgID");
-    for (var i = 0; i < div1.length; i++) {
-        var relFontsize1 = div1[i].offsetWidth * 0.03;
-        div1[i].style.fontSize = relFontsize1 + 'px';
-    }
-    for (var j = 0; j < div2.length; j++) {
-        var relFontsize2 = div2[j].offsetHeight * 0.03;
-        div2[j].style.fontSize = relFontsize2 + 'px';
-    }
-    for (var k = 0; k < div3.length; k++) {
-        var relWidth3 = div3[k].parentElement.offsetHeight * 3;
-        div3[k].style.width = relWidth3 + 'px';
+    
+    var relFontsize1 = div1[0].offsetWidth * 0.03;
+    div1[0].style.fontSize = relFontsize1 + 'px';
+    var relFontsize2 = div2[0].offsetHeight * 0.03;
+    div2[0].style.fontSize = relFontsize2 + 'px';
+
+    for (var i = 0; i < div3.length; i++) {
+        var relWidth3 = div3[i].parentElement.offsetHeight * 3;
+        div3[i].style.width = relWidth3 + 'px';
     }
 };
 
@@ -49,9 +48,41 @@ for (let i = 0; i < items.length; i++) {
             .then(x => x.text())
             .then(html => {
                 contentBody.innerHTML = html;
+                showSlides(1);
             })
             .catch(error => {
                 console.error(`Error loading content: item${i + 1}.html`, error);
             });
     });
+}
+
+
+//image slides
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    if (slides.length > 0) {
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace("active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
 }
