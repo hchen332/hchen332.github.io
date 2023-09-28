@@ -1,0 +1,22 @@
+<h2>Star Trails&nbsp;&nbsp;<p1>April 10, 2023</p1></h2>
+<p>Star Trails is a game built in Unity as my Senior Design project.</p>
+<p>This was my first real experience developing with a game engine and collaborating using a properly set up version control system.</p>
+<p>My Senior Design group was one of the best teams I've been a part of and we're proud of the work we did over the course of the semester, have a look at our demo!</p>
+<br />
+<p><b>DEMO</b></p>
+<iframe src="https://www.youtube.com/embed/HI9nlsHx0W8?si=AzaVh_SiLf1hVONI" title="Star Trails" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<br /><br />
+<p><b>VERSION CONTROL</b></p>
+<p>We used Plastic SCM which is already integrated with Unity, making the setup extremely easy.</p>
+<br />
+<p><b>FEATURES: 8-Directional Movement</b></p>
+<p>I've dabbled in making 3D models in the past because I wanted to understand every step of the process in game-making. For this project, I made the main character's model myself using Blender and my previous experience making model rigs and animations.</p>
+<p>I created a set of 4 animations for the 4 directions, and used Unities blend tree system to blend the animations together. A lot of work went into getting the animations to look right with the controls. Our game was in isometric perspective, meaning that the character's movement needed to be rotated to properly reflect the player's intended movement onto the isometric map.</p>
+<br />
+<p><b>FEATURES: Aiming and Weapon Pickup</b></p>
+<p>Player aiming was another one of my responsibilities. A line is traced from the character to the position of the mouse cursor in order to determine the rotation needed for the character. Checking this rotation against the the direction of movement to ensure that the movement animations conveyed natural motion was challenging but proudly accomplished.</p>
+<p>To get weapons to attach onto the model, I stored a reference to one of the arm bones in the rig and parented the weapon model onto it. I also stored a reference to a bone I added to the weapons so that bullets could spawn at the right location. This was to ensure bullets fired from the right spot when you swapped weapons.</p>
+<br />
+<p><b>FEATURES: Procedural Generation</b></p>
+<p>Our idea was for the game to be an endlessly replayable roguelike. For this concept, I researched methods of procedural generation that I could add to the game. I was able to implement two types of room generation algorithms, but unfortunately we didn't have time to incorporate the proc gen into the final build. The generation script can be seen in the demo video.</p>
+<br />
