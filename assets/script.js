@@ -48,7 +48,8 @@ for (let i = 0; i < items.length; i++) {
             .then(x => x.text())
             .then(html => {
                 contentBody.innerHTML = html;
-                showSlides(1);
+                slideIndex = 1;
+                showSlides(slideIndex);
             })
             .catch(error => {
                 console.error(`Error loading content: item${i + 1}.html`, error);
