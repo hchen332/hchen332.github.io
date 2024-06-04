@@ -1,13 +1,42 @@
-<h2>UNTITLED PROJECT&nbsp;&nbsp;<p1>August 14, 2023</p1></h2>
-<p>If you're curious about the 3D model on my page, allow me to introduce her!</p>
-<p>This is Dragon_Warlock.fbx(name in progress), she is a character I originally designed for a D&D game. She has been brought to virtual life and is now the main character for my current project. This project is what I have been working on to familiarize myself with Unreal Engine 5.</p>
+<h2>DESERT ZUMBIDO (unfinished)&nbsp;&nbsp;<p1>December 1, 2023</p1></h2>
+<p>
+    <a href="https://ococ.itch.io/desertzumbido">Desert Zumbido</a> is a game my friends and I made for Game Off 2023, whose theme was SCALE.
+    Our idea was to create a tower defense game in the style of Dungeon Defenders set in a western post-apocalyptic town. You play as a gunslinging lizard defending your home from mutant zombie insects.
+</p>
+<p>Although the game is unfinished, it contains some features that I implemented that I am proud of, and it was overall a great learning experience in Unreal Engine.</p>
 <br />
-<p><b>FEATURES</b></p>
-<p>This project currently uses a mix of C++ and Unreal Engine's blueprint system. The character movement was implemented in C++ using Unreal's new enhanced input system.</p>
-<p>Movement was something I spent a lot of time getting just right. I wanted to spend less time making animations on Blender without sacrificing the visual appeal of multi-directional movement. I settled on creating two running animations for forward and backward movement. When the character moves in a direction, the transform rotates to make the character face diagonally.</p>
-<p>Additionally, the character is always facing the camera and would rotate to face forward again when you stopped moving. The challenging part was getting all these rotations to work while also interpolating for smoother motion. I accomplished this by creating a TargetRotation variable that always kept track of the rotation the character needed to interpolate to.</p>
-<img src="../assets/project1_code1.png" />
+<p><b>SCREENSHOTS</b></p>
+<div class="slideshow-container">
+    <div class="Slides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="../assets/DesertScreenshot1.png" style="width:100%">
+    </div>
+
+    <div class="Slides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="../assets/DesertScreenshot2.png" style="width:100%">
+    </div>
+
+    <div class="Slides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="../assets/DesertScreenshot3.png" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<p></p>
+<p></p>
+<p><b>VERSION CONTROL</b></p>
+<p>Game Off is a jam hosted by GitHub so we, obviously, used GitHub as our version control.</p>
+<p>It's hard to beat the ease of setting up GitHub as our VCS, as long as we ensured our artists worked on their own sections of the projects, we had minimal issues with merges and binary files.</p>
 <br />
-<p>A feature I implemented with blueprints was the FootIK, making use of Unreal's inverse kinematics system.</p>
-<p>I always wondered how it was done ever since I saw it in games like Assassins Creed. I love immersive details like this, and I was astonished when I realized Unreal has made implementing it so easy.</p>
-<img src="../assets/project1_bp.png" />
+<p><b>FEATURES: Enemy AI and Navigation</b></p>
+<p>For this project, I really wanted to try learning how to make interesting enemy AI. I used Unreal's built in navmesh with some empty vector location objects to guild the enemies along a path toward the center tower.</p>
+<br />
+<p><b>FEATURES: Tower Placement</b></p>
+<p>
+    The first feature I worked on was a way to place towers and keep track of each tower placed.
+    It was a fairly simple implementation but it does have the additional feature of previewing a tower before you placed it and ensuring that towers have a zone around them to prevent towers from being placed to close together.
+</p>
+<br />

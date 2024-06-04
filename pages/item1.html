@@ -1,62 +1,43 @@
-<h2>TIME TO COLLECT&nbsp;&nbsp;<p1>September 14, 2023</p1></h2>
-<p>Time to Collect is a game made in UE 5.3 by a team I put together consisting of some programmer and artist friends of mine.</p>
-<p>You play as a rat who collects objects scattered around the room while avoiding a deadly roomba and other security, take a look!</p>
-<br />
-<p><b>DEMO</b></p>
-<iframe src="https://www.youtube.com/embed/uGmfmViE7pE?si=Va1TVgHsTV_BVNZp" title="Time to Collect" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<br />
-<br />
-<p><b>VERSION CONTROL</b></p>
-<p>Our game is built on Unreal Engine 5 but we opted to use Unity's Plastic SCM as our source control. Setting up Plastic was a bit of hurdle in the beginning, but once we set up the right ignore.config it was smooth sailing.</p>
-<p>More recently, we decided to transfer the game onto a GitHub repository instead. Using Git as our version control will allow us to more easily collaborate with our artists as well as providing us with the other functionalities of GitHub such as the Project board feature.</p>
-<br />
-<p><b>FEATURES: Procedural Room Generation</b></p>
-<p>I love random elements in games and Proc Gen is one of my favorite things to implement. It was the feature I spent the most time getting just right.</p>
-<p>I used a grid based system and applied some principles of grid traversal. The grid was populated with numbers representing empty or occupied spaces or coordinates where an object is to be spawned. Then, I iterate through the grid again, spawning in objects and check against the surrounding grid tiles to determine how I need to orient the object.</p>
-<p>To prevent cases where a bed would spawn right in front of a door or a dresser would spawn with no room for a person to access it, I would mark tiles as "occupied" wherever a piece of furniture would logically have empty space around it. All furnitures were placed against the wall, so this also required checks on the surrounding tiles to determine the orientation.</p>
-<br />
-<video controls>
-    <source src="../assets/ToC_ProcGen.mp4" type="video/mp4">
-    Unable to load video.
-</video>
-<br />
-<br />
-<p><b>FEATURES: Movement</b></p>
-<p>One of my goals for this game was to do my part of the work in C++ whenever possible. Unreal's blueprint system is powerful, but I enjoy the familiarity of C++ as well as the ease of readability.</p>
-<p>The movement of the Rat is code I adapted from an earlier exercise project. It additionally implements a charge-jump which allows the Rat to gain greater jump height the longer you hold Spacebar. I worked with our artists to integrate character movement with animations, since I had prior experience with this in another project.</p>
-<br />
-<p><b>FEATURES: Wordle</b></p>
-<p>Inside Time to Collect is my implementation of <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a>. It contains the entire list of possible 5-letter solutions used in NYT's Wordle, as well as their list of possible guesses.</p>
-<p>The Wordle logic was simple, but before I could work on the logic, I needed to figure out how to programmatically create a grid to hold the guesses. After much searching, I finally discovered WidgetTrees and how to use them. As always, the solution is simple and intuitive in hindsight.</p>
-<br />
-<video controls>
-    <source src="../assets/ToC_Wordle.mp4" type="video/mp4">
-    Unable to load video.
-</video>
-<br />
+<h2>CATHORSE RESCUE&nbsp;&nbsp;<p1>May 20, 2024</p1></h2>
+<p>Cathorse Rescue is a game about rescuing your cat-seahorse friend. The game was made for Pixel Jam 2024 with a 3-person team with myself as the primary programmer.</p>
+<p><a href="https://ococ.itch.io/cathorse-rescue">Cathorse Rescue</a> is WebGL game and hosted on itch.io, give it a try!</p>
 <br />
 <p><b>SCREENSHOTS</b></p>
 <div class="slideshow-container">
     <div class="Slides fade">
-        <div class="numbertext">1 / 4</div>
-        <img src="../assets/RatScreenshot1.png" style="width:100%">
+        <div class="numbertext">1 / 3</div>
+        <img src="../assets/CathorseScreenshot1.png" style="width:100%">
     </div>
 
     <div class="Slides fade">
-        <div class="numbertext">2 / 4</div>
-        <img src="../assets/RatScreenshot2.png" style="width:100%">
+        <div class="numbertext">2 / 3</div>
+        <img src="../assets/CathorseScreenshot2.png" style="width:100%">
     </div>
 
     <div class="Slides fade">
-        <div class="numbertext">3 / 4</div>
-        <img src="../assets/RatScreenshot3.png" style="width:100%">
-    </div>
-
-    <div class="Slides fade">
-        <div class="numbertext">4 / 4</div>
-        <img src="../assets/RatScreenshot4.png" style="width:100%">
+        <div class="numbertext">3 / 3</div>
+        <img src="../assets/CathorseScreenshot3.png" style="width:100%">
     </div>
 
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
+<p></p>
+<p></p>
+<p><b>VERSION CONTROL</b></p>
+<p>Cathorse was made in Unity so we opted to use Unity's built in VCS. Although Git is my preferred VCS, Unity's VCS worked very well for us this time with the use of good branch management.</p>
+<br />
+<p><b>FEATURES: Movement and Aerial Combat</b></p>
+<p>My main inspiration for the game's combat was Castle Crashers. I wanted to emulate the way the player traverses the screen in mid-air as they smacked the enemies.</p>
+<p>
+    The character is controlled with a Character Controller component and the physics is manually implemented in C#.
+    This gave me more control of player-enemy interactions and prevents issue like unintended rotations and clipping that might occur using Unity's physics system.
+    Attacking an enemy adds a forward and upward vector to the player character as well as knocking back enemies.
+</p>
+<br />
+<p><b>FEATURES: Enemy AI</b></p>
+<p>
+    In the current implementation of the game, enemies have a simple AI that only adds to a movement vector the direction of the player in range.
+    Some other AI behaviors like circling the player exists but are not in use due to the time constraints for the game jam.
+    The script is designed so that an enemy can make use of multiple behaviors like following, circling, and keeping away simultaneously or even change behaviors depending on conditions.
+</p>
